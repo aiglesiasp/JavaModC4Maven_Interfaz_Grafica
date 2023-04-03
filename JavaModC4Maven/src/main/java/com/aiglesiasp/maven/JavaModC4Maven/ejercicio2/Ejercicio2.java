@@ -24,6 +24,7 @@ public class Ejercicio2 extends JFrame{
 		contentPane = new JPanel();
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
+		
 		etiqueta = new JLabel("No has pulsado nada");
 		etiqueta.setHorizontalAlignment(SwingConstants.CENTER);
 		etiqueta.setBounds(6, 25, 147, 20);
