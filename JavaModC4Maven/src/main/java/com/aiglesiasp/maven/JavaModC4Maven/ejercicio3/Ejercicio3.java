@@ -21,6 +21,7 @@ public class Ejercicio3 extends JFrame {
 
 
 	public Ejercicio3() {
+		setTitle("EJERCICIO 3"); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 150);
 		contentPane = new JPanel();
