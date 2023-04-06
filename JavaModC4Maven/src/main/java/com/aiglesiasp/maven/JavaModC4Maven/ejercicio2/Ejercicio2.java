@@ -48,11 +48,11 @@ public class Ejercicio2 extends JFrame {
 	// ACTION LISTENER
 	ActionListener al = new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-			// SI PULSA BOTON +
+			// SI PULSA BOTON 1
 			if (e.getSource() == boton1) {
 				etiqueta.setText("Pulsaste el BOTON 1");
 			}
-			// SI PULSA BOTON -
+			// SI PULSA BOTON 2
 			if (e.getSource() == boton2) {
 				etiqueta.setText("Pulsaste el BOTON 2");
 			}

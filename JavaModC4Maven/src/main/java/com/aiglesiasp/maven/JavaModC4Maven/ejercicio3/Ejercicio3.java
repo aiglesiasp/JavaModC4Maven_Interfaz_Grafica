@@ -55,12 +55,12 @@ public class Ejercicio3 extends JFrame {
 	// ACTION LISTENER
 	ActionListener al = new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-			// SI PULSA BOTON +
+			// SI PULSA BOTON 1
 			if (e.getSource() == boton1) {
 				countBoton1++;
 				etiquetaBoton1.setText("Boton 1: " + countBoton1 + " veces");
 			}
-			// SI PULSA BOTON -
+			// SI PULSA BOTON 2
 			if (e.getSource() == boton2) {
 				countBoton2++;
 				etiquetaBoton2.setText("Boton 2: " + countBoton2 + " veces");

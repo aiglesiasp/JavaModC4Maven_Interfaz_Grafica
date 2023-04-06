@@ -54,15 +54,17 @@ public class Ejercicio4 extends JFrame {
 	// MOUSE ADAPTER
 	MouseAdapter mouse = new MouseAdapter() {
 		public void mouseReleased(MouseEvent e) {
+			// Pulsa en LABEL
 			if (e.getSource() == lblEventos) {
 				textArea.append("Se ha clicado en el label Eventos");
 				textArea.append(System.getProperty("line.separator"));
 			}
-			// SI PULSA BOTON -
+			// Pulsa en TextArea
 			if (e.getSource() == textArea) {
 				textArea.append("Se ha clicado en el TextArea");
 				textArea.append(System.getProperty("line.separator"));
 			}
+			// Pulsa en panel
 			if (e.getSource() == contentPane) {
 				textArea.append("Se ha clicado en la ventana");
 				textArea.append(System.getProperty("line.separator"));

@@ -18,7 +18,7 @@ public class App {
 		// Ejercicio3 ej3 = new Ejercicio3();
 		// Ejercicio4 ej4 = new Ejercicio4();
 		// Ejercicio5 ej5 = new Ejercicio5();
-		 Ejercicio6 ej6 = new Ejercicio6();
-		// Ejercicio7 ej7 = new Ejercicio7();
+		// Ejercicio6 ej6 = new Ejercicio6();
+		 Ejercicio7 ej7 = new Ejercicio7();
 	}
 }

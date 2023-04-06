@@ -68,7 +68,6 @@ public class Ejercicio6 extends JFrame {
 	// ACTION LISTENER
 	ActionListener al = new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-			// SI PULSA BOTON +
 			double altura = Double.parseDouble(fieldAltura.getText());
 			double peso = Double.parseDouble(fieldPeso.getText());
 			double res = peso / Math.pow(altura, 2);
