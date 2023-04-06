@@ -15,7 +15,7 @@ public class Ejercicio7 extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField fieldCantidad;
-	private JTextField fieldResultado;
+	private JLabel fieldResultado;
 	private boolean estado = true;
 	private JButton btnConversor;
 	private final double EURO = 166.386;
@@ -42,15 +42,13 @@ public class Ejercicio7 extends JFrame {
 		fieldCantidad = new JTextField();
 		fieldCantidad.setBounds(16, 40, 130, 26);
 		contentPane.add(fieldCantidad);
-		fieldCantidad.setColumns(10);
 
 		// REUSLTADO
 		JLabel labelResultado = new JLabel("Resultado");
 		labelResultado.setBounds(208, 24, 74, 16);
 		contentPane.add(labelResultado);
 
-		fieldResultado = new JTextField();
-		fieldResultado.setColumns(10);
+		fieldResultado = new JLabel();
 		fieldResultado.setBounds(208, 40, 194, 26);
 		contentPane.add(fieldResultado);
 
