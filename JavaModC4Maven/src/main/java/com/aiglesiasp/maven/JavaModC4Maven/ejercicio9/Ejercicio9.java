@@ -8,17 +8,27 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+
 /**
  * @author aitor
  *
  */
-public class Ejercicio9 extends JFrame{
-	
+public class Ejercicio9 extends JFrame {
+
 	private JPanel contentPane;
-	
+	public int primerClick;
+	public int segundoClick;
+	public int contador = 0;
+	public int contadorPalabras = 0;
+	public JToggleButton tglbtn1, tglbtn2, tglbtn3, tglbtn4, tglbtn5, tglbtn6, tglbtn7, tglbtn8, tglbtn9, tglbtn10, tglbtn11, tglbtn12, tglbtn13, tglbtn14, tglbtn15, tglbtn16;
+	public ArrayList<JToggleButton> btnsTotales = new ArrayList<>();
+	public ArrayList<String> listaPalabras = new ArrayList<>();
+	public ArrayList<String> palabrasUsadas = new ArrayList<>();
+
 	public Ejercicio9() {
 		setTitle("EJERCICIO 5");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -28,108 +38,168 @@ public class Ejercicio9 extends JFrame{
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JToggleButton tglbtn1 = new JToggleButton("boton1");
+		generarPalabras();
+		
+
+		tglbtn1 = new JToggleButton();
 		tglbtn1.setBounds(10, 10, 120, 120);
-		tglbtn1.addItemListener(al);
+		btnsTotales.add(tglbtn1);
 		contentPane.add(tglbtn1);
-		
-		JToggleButton tglbtn2 = new JToggleButton("boton2");
+
+		tglbtn2 = new JToggleButton();
 		tglbtn2.setBounds(140, 10, 120, 120);
-		tglbtn2.addItemListener(al);
+		btnsTotales.add(tglbtn2);
 		contentPane.add(tglbtn2);
-		
-		JToggleButton tglbtn3 = new JToggleButton("boton3");
+
+		tglbtn3 = new JToggleButton();
 		tglbtn3.setBounds(270, 10, 120, 120);
-		tglbtn3.addItemListener(al);
+		btnsTotales.add(tglbtn3);
 		contentPane.add(tglbtn3);
-		
-		JToggleButton tglbtn4 = new JToggleButton("boton4");
+
+		tglbtn4 = new JToggleButton();
 		tglbtn4.setBounds(400, 10, 120, 120);
-		tglbtn4.addItemListener(al);
+		btnsTotales.add(tglbtn4);
 		contentPane.add(tglbtn4);
-		
-		JToggleButton tglbtn5 = new JToggleButton("boton5");
+
+		tglbtn5 = new JToggleButton();
 		tglbtn5.setBounds(10, 140, 120, 120);
-		tglbtn5.addItemListener(al);
+		btnsTotales.add(tglbtn5);
 		contentPane.add(tglbtn5);
-		
-		JToggleButton tglbtn6 = new JToggleButton("boton6");
+
+		tglbtn6 = new JToggleButton();
 		tglbtn6.setBounds(140, 140, 120, 120);
-		tglbtn6.addItemListener(al);
+		btnsTotales.add(tglbtn6);
 		getContentPane().add(tglbtn6);
-		
-		JToggleButton tglbtn7 = new JToggleButton("boton7");
+
+		tglbtn7 = new JToggleButton();
 		tglbtn7.setBounds(270, 140, 120, 120);
-		tglbtn7.addItemListener(al);
+		btnsTotales.add(tglbtn7);
 		contentPane.add(tglbtn7);
-		
-		JToggleButton tglbtn8 = new JToggleButton("boton8");
+
+		tglbtn8 = new JToggleButton();
 		tglbtn8.setBounds(400, 140, 120, 120);
-		tglbtn8.addItemListener(al);
+		btnsTotales.add(tglbtn8);
 		contentPane.add(tglbtn8);
-		
-		JToggleButton tglbtn9 = new JToggleButton("boton9");
+
+		tglbtn9 = new JToggleButton();
 		tglbtn9.setBounds(10, 270, 120, 120);
-		tglbtn9.addItemListener(al);
+		btnsTotales.add(tglbtn9);
 		contentPane.add(tglbtn9);
-		
-		JToggleButton tglbtn10 = new JToggleButton("boton10");
+
+		tglbtn10 = new JToggleButton();
 		tglbtn10.setBounds(140, 270, 120, 120);
-		tglbtn10.addItemListener(al);
+		btnsTotales.add(tglbtn10);
 		contentPane.add(tglbtn10);
-		
-		JToggleButton tglbtn11 = new JToggleButton("boton11");
+
+		tglbtn11 = new JToggleButton();
 		tglbtn11.setBounds(270, 270, 120, 120);
-		tglbtn11.addItemListener(al);
+		btnsTotales.add(tglbtn11);
 		contentPane.add(tglbtn11);
-		
-		JToggleButton tglbtn12 = new JToggleButton("boton12");
+
+		tglbtn12 = new JToggleButton();
 		tglbtn12.setBounds(400, 270, 120, 120);
-		tglbtn12.addItemListener(al);
+		btnsTotales.add(tglbtn12);
 		contentPane.add(tglbtn12);
-		
-		JToggleButton tglbtn13 = new JToggleButton("boton13");
+
+		tglbtn13 = new JToggleButton();
 		tglbtn13.setBounds(10, 400, 120, 120);
-		tglbtn13.addItemListener(al);
+		btnsTotales.add(tglbtn13);
 		contentPane.add(tglbtn13);
-		
-		JToggleButton tglbtn14 = new JToggleButton("boton14");
+
+		tglbtn14 = new JToggleButton();
 		tglbtn14.setBounds(140, 400, 120, 120);
-		tglbtn14.addItemListener(al);
+		btnsTotales.add(tglbtn14);
 		contentPane.add(tglbtn14);
-		
-		JToggleButton tglbtn15 = new JToggleButton("boton15");
+
+		tglbtn15 = new JToggleButton();
 		tglbtn15.setBounds(270, 400, 120, 120);
-		tglbtn15.addItemListener(al);
+		btnsTotales.add(tglbtn15);
 		contentPane.add(tglbtn15);
-		
-		JToggleButton tglbtn16 = new JToggleButton("boton16");
+
+		tglbtn16 = new JToggleButton();
 		tglbtn16.setBounds(400, 400, 120, 120);
-		tglbtn16.addItemListener(al);
+		btnsTotales.add(tglbtn16);
 		contentPane.add(tglbtn16);
-		
+
+		for (int i = 0; i< btnsTotales.size(); i++) {
+				
+				btnsTotales.get(i).addActionListener(al);
+				
+		}
+
 		setVisible(true);
 	}
-	
-	// ACTION LISTENER
-		ItemListener al = new ItemListener() {
 
-			@Override
-			public void itemStateChanged(ItemEvent e) {
-				// TODO Auto-generated method stub
-				JToggleButton botonpressed = (JToggleButton) e.getSource();
-				int estado = e.getStateChange();
-				if(estado == ItemEvent.SELECTED){
-                    botonpressed.setText("Botón seleccionado");
-                    botonpressed.setBackground(Color.RED);
-                } else {
-                	botonpressed.setText("Botón deseleccionado");
-                }
+	// ACTION LISTENER
+	ActionListener al = new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			for(int i = 0; i < btnsTotales.size(); i++) {
+				if(btnsTotales.get(i) == e.getSource()) {
+					if(btnsTotales.get(i).isSelected()) {
+						if(btnsTotales.get(i).getText().isEmpty()) {
+							btnsTotales.get(i).setText(palabraAleatoria());
+						} else {
+							btnsTotales.get(i).setText(btnsTotales.get(i).getText());
+						}
+						
+						btnsTotales.get(i).setText(palabraAleatoria());
+					} else {
+						btnsTotales.get(i).setText("");
+						//btnsTotales.get(i).setVisible(isEnabled());
+						//btnsTotales.get(i).getAccessibleContext().getAccessibleText().toString();
+					}
+				}
 				
 			}
 			
-		};
+		}
+
+	};
+	
+	
+	public void generarPalabras() {
+		listaPalabras.add("MONO");
+		listaPalabras.add("OVEJA");
+		listaPalabras.add("COCODRILO");
+		listaPalabras.add("PERRO");
+		listaPalabras.add("GATO");
+		listaPalabras.add("LOBO");
+		listaPalabras.add("ZORRO");
+		listaPalabras.add("LEON");
+	}
+	
+	public String palabraAleatoria() {
+		String palabra = "";
+		boolean incorrecto = true;
+		int random = (int) (Math.random()*8);
+		contador = 0;
+		do {
+			palabra = listaPalabras.get(random);
+			if(palabrasUsadas.size()== 0) {
+				palabrasUsadas.add(palabra);
+				incorrecto = false;
+			}
+			else {
+				for(int i = 0; i< palabrasUsadas.size(); i++) {
+					if(palabra == palabrasUsadas.get(i)) {
+						contador++;
+					}
+				}
+				if(contador >=2) {
+					incorrecto = true;
+					contador = 0;
+				} else {
+					incorrecto = false;
+					palabrasUsadas.add(palabra);
+				}
+			}
+			
+		} while(incorrecto);
 		
-	
-	
+		return palabra;
+	}
+
+
 }
