@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -26,12 +27,12 @@ public class Ejercicio8 extends JFrame {
 	private final double EURO = 166.386;
 	private JButton btnLimpiar;
 	private JButton btnCambiar;
-	
+
 	/**
 	 * Create the frame.
 	 */
 	public Ejercicio8() {
-		setTitle("EJERCICIO 7");
+		setTitle("EJERCICIO 8");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(300, 300, 450, 300);
 		contentPane = new JPanel();
@@ -74,37 +75,42 @@ public class Ejercicio8 extends JFrame {
 
 		setVisible(true);
 	}
-	
+
 	// ACTION LISTENER
-		ActionListener al = new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				// Boton conversor
-				if (e.getSource() == btnConversor) {
-					double num = Double.parseDouble(fieldCantidad.getText());
-					double res = 0.0;
-					if (estado == true) {
-						res = num * EURO;
-					} else {
-						res = num / EURO;
-					}
-					fieldResultado.setText("" + res);
+	ActionListener al = new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			// Boton conversor
+			double num = 0.0;
+			if (e.getSource() == btnConversor) {
+				try {
+					num = Double.parseDouble(fieldCantidad.getText());
+				} catch (Exception error) {
+					JOptionPane.showMessageDialog(null, "Error en el tipo de dato");
 				}
-
-				if (e.getSource() == btnCambiar) {
-					if (estado == true) {
-						btnConversor.setText("Ptas a euros");
-						estado = false;
-					} else {
-						btnConversor.setText("Euros a ptas");
-						estado = true;
-					}
+				double res = 0.0;
+				if (estado == true) {
+					res = num * EURO;
+				} else {
+					res = num / EURO;
 				}
-
-				if (e.getSource() == btnLimpiar) {
-					fieldResultado.setText("");
-					fieldCantidad.setText("");
-				}
-
+				fieldResultado.setText("" + res);
 			}
-		};
+
+			if (e.getSource() == btnCambiar) {
+				if (estado == true) {
+					btnConversor.setText("Ptas a euros");
+					estado = false;
+				} else {
+					btnConversor.setText("Euros a ptas");
+					estado = true;
+				}
+			}
+
+			if (e.getSource() == btnLimpiar) {
+				fieldResultado.setText("");
+				fieldCantidad.setText("");
+			}
+
+		}
+	};
 }

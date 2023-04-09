@@ -6,6 +6,7 @@ import com.aiglesiasp.maven.JavaModC4Maven.ejercicio3.Ejercicio3;
 import com.aiglesiasp.maven.JavaModC4Maven.ejercicio4.Ejercicio4;
 import com.aiglesiasp.maven.JavaModC4Maven.ejercicio6.Ejercicio6;
 import com.aiglesiasp.maven.JavaModC4Maven.ejercicio7.Ejercicio7;
+import com.aiglesiasp.maven.JavaModC4Maven.ejercicio8.Ejercicio8;
 
 /**
  * Hello world!
@@ -19,6 +20,7 @@ public class App {
 		// Ejercicio4 ej4 = new Ejercicio4();
 		// Ejercicio5 ej5 = new Ejercicio5();
 		// Ejercicio6 ej6 = new Ejercicio6();
-		 Ejercicio7 ej7 = new Ejercicio7();
+		// Ejercicio7 ej7 = new Ejercicio7();
+		 Ejercicio8 ej8 = new Ejercicio8();
 	}
 }
