@@ -3,11 +3,8 @@
  */
 package com.aiglesiasp.maven.JavaModC4Maven.ejercicio9;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.util.ArrayList;
 
 import javax.swing.*;
@@ -24,7 +21,8 @@ public class Ejercicio9 extends JFrame {
 	public int segundoClick;
 	public int contador = 0;
 	public int contadorPalabras = 0;
-	public JToggleButton tglbtn1, tglbtn2, tglbtn3, tglbtn4, tglbtn5, tglbtn6, tglbtn7, tglbtn8, tglbtn9, tglbtn10, tglbtn11, tglbtn12, tglbtn13, tglbtn14, tglbtn15, tglbtn16;
+	public JToggleButton tglbtn1, tglbtn2, tglbtn3, tglbtn4, tglbtn5, tglbtn6, tglbtn7, tglbtn8, tglbtn9, tglbtn10,
+			tglbtn11, tglbtn12, tglbtn13, tglbtn14, tglbtn15, tglbtn16;
 	public ArrayList<JToggleButton> btnsTotales = new ArrayList<>();
 	public ArrayList<String> listaPalabras = new ArrayList<>();
 	public ArrayList<String> palabrasUsadas = new ArrayList<>();
@@ -37,9 +35,9 @@ public class Ejercicio9 extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		generarPalabras();
-		
+
 		tglbtn1 = new JToggleButton();
 		tglbtn1.setBounds(10, 10, 120, 120);
 		btnsTotales.add(tglbtn1);
@@ -121,8 +119,8 @@ public class Ejercicio9 extends JFrame {
 		contentPane.add(tglbtn16);
 
 		// ASIGNAR ACTIONLISTENER A CADA UNO DE LOS TOGGLE BUTTON
-		for (int i = 0; i< btnsTotales.size(); i++) {
-				btnsTotales.get(i).addActionListener(al);
+		for (int i = 0; i < btnsTotales.size(); i++) {
+			btnsTotales.get(i).addActionListener(al);
 		}
 		setVisible(true);
 	}
@@ -132,30 +130,28 @@ public class Ejercicio9 extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			for(int i = 0; i < btnsTotales.size(); i++) {
-				if(btnsTotales.get(i) == e.getSource()) {
-					if(btnsTotales.get(i).isSelected()) {
-						if(btnsTotales.get(i).getText().isEmpty()) {
+			for (int i = 0; i < btnsTotales.size(); i++) {
+				if (btnsTotales.get(i) == e.getSource()) {
+					if (btnsTotales.get(i).isSelected()) {
+						if (btnsTotales.get(i).getText().isEmpty()) {
 							btnsTotales.get(i).setText(palabraAleatoria());
 						} else {
 							btnsTotales.get(i).setText(btnsTotales.get(i).getText());
 						}
-						
+
 						btnsTotales.get(i).setText(palabraAleatoria());
 					} else {
 						btnsTotales.get(i).setText("");
-						//btnsTotales.get(i).setVisible(isEnabled());
-						//btnsTotales.get(i).getAccessibleContext().getAccessibleText().toString();
+						// btnsTotales.get(i).setVisible(isEnabled());
 					}
 				}
-				
+
 			}
-			
+
 		}
 
 	};
-	
-	
+
 	public void generarPalabras() {
 		listaPalabras.add("MONO");
 		listaPalabras.add("OVEJA");
@@ -166,25 +162,24 @@ public class Ejercicio9 extends JFrame {
 		listaPalabras.add("ZORRO");
 		listaPalabras.add("LEON");
 	}
-	
+
 	public String palabraAleatoria() {
 		String palabra = "";
 		boolean incorrecto = true;
-		int random = (int) (Math.random()*8);
+		int random = (int) (Math.random() * 8);
 		contador = 0;
 		do {
 			palabra = listaPalabras.get(random);
-			if(palabrasUsadas.size()== 0) {
+			if (palabrasUsadas.size() == 0) {
 				palabrasUsadas.add(palabra);
 				incorrecto = false;
-			}
-			else {
-				for(int i = 0; i< palabrasUsadas.size(); i++) {
-					if(palabra == palabrasUsadas.get(i)) {
+			} else {
+				for (int i = 0; i < palabrasUsadas.size(); i++) {
+					if (palabra == palabrasUsadas.get(i)) {
 						contador++;
 					}
 				}
-				if(contador >=2) {
+				if (contador >= 2) {
 					incorrecto = true;
 					contador = 0;
 				} else {
@@ -192,11 +187,10 @@ public class Ejercicio9 extends JFrame {
 					palabrasUsadas.add(palabra);
 				}
 			}
-			
-		} while(incorrecto);
-		
+
+		} while (incorrecto);
+
 		return palabra;
 	}
-
 
 }

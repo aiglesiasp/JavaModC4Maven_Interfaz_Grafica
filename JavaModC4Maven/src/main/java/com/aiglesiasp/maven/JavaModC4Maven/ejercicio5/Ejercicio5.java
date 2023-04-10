@@ -23,7 +23,7 @@ public class Ejercicio5 extends JFrame {
 	private JTextArea textArea;
 
 	public Ejercicio5() {
-		
+
 		MouseListener mouseEvent = new MouseEvents();
 
 		setTitle("EJERCICIO 5");
@@ -53,44 +53,39 @@ public class Ejercicio5 extends JFrame {
 			textArea.setText("");
 		}
 	};
-	
-	
+
 	class MouseEvents extends MouseInputAdapter {
-		
+
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			super.mouseClicked(e);
 			textArea.append("El Usuario ha hecho un click\n");
 		}
-		
-		
+
 		@Override
 		public void mousePressed(MouseEvent e) {
 			super.mouseClicked(e);
 			textArea.append("El Usuario esta presionando el raton\n");
 		}
-		
-		
+
 		@Override
 		public void mouseReleased(MouseEvent e) {
 			super.mouseClicked(e);
 			textArea.append("El Usuario ha soltado el raton\n");
 		}
-		
-		
+
 		@Override
 		public void mouseEntered(MouseEvent e) {
 			super.mouseClicked(e);
 			textArea.append("El Usuario ha entrado en el area de texto\n");
 		}
-		
-		
+
 		@Override
 		public void mouseExited(MouseEvent e) {
 			super.mouseClicked(e);
 			textArea.append("El Usuario ha salido en el area de texto\n");
 		}
-		
+
 	}
-	
+
 }

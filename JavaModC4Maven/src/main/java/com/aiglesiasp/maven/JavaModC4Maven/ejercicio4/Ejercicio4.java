@@ -3,8 +3,6 @@
  */
 package com.aiglesiasp.maven.JavaModC4Maven.ejercicio4;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 

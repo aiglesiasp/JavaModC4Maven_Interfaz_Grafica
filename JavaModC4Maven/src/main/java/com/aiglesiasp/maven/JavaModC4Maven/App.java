@@ -12,9 +12,6 @@ import com.aiglesiasp.maven.JavaModC4Maven.ejercicio7.Ejercicio7;
 import com.aiglesiasp.maven.JavaModC4Maven.ejercicio8.Ejercicio8;
 import com.aiglesiasp.maven.JavaModC4Maven.ejercicio9.Ejercicio9;
 
-import bootcamp.M4.Team1_Juego_del_ahorcado.controllers.WelcomeController;
-import bootcamp.M4.Team1_Juego_del_ahorcado.views.WelcomeView;
-
 /**
  * Hello world!
  *
