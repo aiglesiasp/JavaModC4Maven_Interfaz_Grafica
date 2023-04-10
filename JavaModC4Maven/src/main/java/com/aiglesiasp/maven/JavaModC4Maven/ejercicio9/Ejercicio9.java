@@ -30,7 +30,7 @@ public class Ejercicio9 extends JFrame {
 	public ArrayList<String> palabrasUsadas = new ArrayList<>();
 
 	public Ejercicio9() {
-		setTitle("EJERCICIO 5");
+		setTitle("EJERCICIO 9");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 530, 560);
 		contentPane = new JPanel();
@@ -40,7 +40,6 @@ public class Ejercicio9 extends JFrame {
 		
 		generarPalabras();
 		
-
 		tglbtn1 = new JToggleButton();
 		tglbtn1.setBounds(10, 10, 120, 120);
 		btnsTotales.add(tglbtn1);
@@ -69,7 +68,7 @@ public class Ejercicio9 extends JFrame {
 		tglbtn6 = new JToggleButton();
 		tglbtn6.setBounds(140, 140, 120, 120);
 		btnsTotales.add(tglbtn6);
-		getContentPane().add(tglbtn6);
+		contentPane.add(tglbtn6);
 
 		tglbtn7 = new JToggleButton();
 		tglbtn7.setBounds(270, 140, 120, 120);
@@ -121,12 +120,10 @@ public class Ejercicio9 extends JFrame {
 		btnsTotales.add(tglbtn16);
 		contentPane.add(tglbtn16);
 
+		// ASIGNAR ACTIONLISTENER A CADA UNO DE LOS TOGGLE BUTTON
 		for (int i = 0; i< btnsTotales.size(); i++) {
-				
 				btnsTotales.get(i).addActionListener(al);
-				
 		}
-
 		setVisible(true);
 	}
 
